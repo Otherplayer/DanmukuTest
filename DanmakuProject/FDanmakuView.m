@@ -66,16 +66,12 @@
     NSArray *items = [self subArrayWithNumber:[self rows]];
     
     for (FdanmakuModel *model in items) {
-        FDanmakuCell *currentCell = [self.dataSource barrageView:self cellForModel:model];
-        //在哪展示
-        currentCell.delegate = self;
         NSInteger runway = [self availableRunway];
-        if (runway != -1) {
-            NSLog(@"%@",@(runway));
-        }
         if (runway == -1) {//无可用轨道
             [self.datas addObject:model];
         }else{
+            FDanmakuCell *currentCell = [self.dataSource barrageView:self cellForModel:model];
+            currentCell.delegate = self;
             [currentCell setRunway:runway];
             [currentCell setFrame:[self frame:runway width:[model cellWidth]]];
             if (![self.subviews containsObject:currentCell]) {

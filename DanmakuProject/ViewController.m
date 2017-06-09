@@ -10,6 +10,8 @@
 #import "FDanmakuView.h"
 #import "FDcontroller.h"
 
+static int x = 0;
+
 @interface ViewController ()<FDanmakuDataSource,FDanmakuDelegate>
 
 @property (nonatomic, strong)FDanmakuView *danmakuView;
@@ -55,8 +57,8 @@
 }
 - (FDanmakuCell *)barrageView:(FDanmakuView *)barrageView cellForModel:(FdanmakuModel *)model{
     FDanmakuCell *cell = [barrageView dequeueReusableCellWithIdentifier:@"identifier"];
-    NSLog(@"%@",cell);
     if (!cell) {
+        NSLog(@"NO----%@",@(x++));
         cell = [[FDanmakuCell alloc] initWithIdentifier:@"identifier"];
     }
     [cell.labMessage setText:model.message];
