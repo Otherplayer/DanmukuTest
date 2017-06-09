@@ -53,7 +53,7 @@ static int x = 0;
     return 45;
 }
 - (NSUInteger)numberOfRowsInBarrageView:(FDanmakuView *)barrageView{
-    return 5;
+    return 2;
 }
 - (FDanmakuCell *)barrageView:(FDanmakuView *)barrageView cellForModel:(FdanmakuModel *)model{
     FDanmakuCell *cell = [barrageView dequeueReusableCellWithIdentifier:@"identifier"];

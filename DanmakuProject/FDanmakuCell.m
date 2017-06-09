@@ -67,9 +67,6 @@
     move.removedOnCompletion = NO;// 取消反弹
     [self.layer addAnimation:move forKey:@"shooter"];
     
-    
-    
-    
 }
 
 
